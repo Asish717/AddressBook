@@ -33,8 +33,4 @@ public class AddressBook {
         this.phone=phone;
         this.email=email;
     }
-    public static void main(String[] args) {
-        AddressBook add=new AddressBook("sd","adf","aef","aeef","wsbrv",2464,4634,"sger");
-        System.out.println(add);
-    }
 }
