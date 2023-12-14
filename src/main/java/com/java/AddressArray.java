@@ -28,10 +28,10 @@ public class AddressArray {
         System.out.println(ab);
     }
     public void editContact(){
-        System.out.println("Enter your name");
+        System.out.println("Enter the name for which the details to be edited: ");
         String name=sc.next();
         for (AddressBook book:obj){
-            if (book.getFirstName().equalsIgnoreCase(name)){
+            if (book.getFirstName().equals(name)){
                 System.out.println("1. address\n2. city\n3. state\n4. zip\n5. phone\n6. email");
                 System.out.println("select option");
                 int option=sc.nextInt();
@@ -68,9 +68,22 @@ public class AddressArray {
         }
         System.out.println(obj);
     }
+    public void deleteContact(){
+        System.out.println("Enter the name by which the contact to be deleted: ");
+        String name=sc.next();
+        for (AddressBook book:obj){
+            if (book.getFirstName().equals(name)){
+                obj.remove(book);
+                break;
+            }
+        }
+        System.out.println(obj);
+    }
     public static void main(String[] args) {
         AddressArray arr=new AddressArray();
         arr.addContact();
+        arr.addContact();
         arr.editContact();
+        arr.deleteContact();
     }
 }

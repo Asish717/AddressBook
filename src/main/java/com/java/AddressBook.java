@@ -61,15 +61,7 @@ public class AddressBook {
     }
     @Override
     public String toString() {
-        return "AddressBook: " +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", address='" + address + '\'' +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
-                ", zip=" + zip +
-                ", phone=" + phone +
-                ", email='" + email + '\'';
+        return "AddressBook: "+" "+firstName+" "+lastName+" " +address+" "+city+" "+state+" "+zip+" "+phone +" "+ email;
     }
     public AddressBook(String firstName, String lastName, String address, String city,
                        String state, String zip, String phone, String email){
