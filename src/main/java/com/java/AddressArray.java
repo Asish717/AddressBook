@@ -6,6 +6,39 @@ import java.util.Scanner;
 public class AddressArray {
     static Scanner sc=new Scanner(System.in);
     ArrayList<AddressBook>obj=new ArrayList<>();
+    public void method(){
+        while (true){
+            System.out.println("1. Add contact\n2. Edit contact\n3. Delete contact\n4. View contact\n5. Exit");
+            System.out.println("Select operation: ");
+            int choose= sc.nextInt();
+            switch (choose){
+                case 1:
+                    addContact();
+                    break;
+                case 2:
+                    editContact();
+                    break;
+                case 3:
+                    deleteContact();
+                    break;
+                case 4:
+                    viewContact();
+                    break;
+                case 5:
+                    sc.close();
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Enter valid operation!!");
+                    break;
+            }
+        }
+    }
+    public void viewContact(){
+        for (int i=0;i<obj.size();i++){
+            System.out.println(obj.get(i));
+        }
+    }
     public void addContact(){
         System.out.println("Enter first name: ");
         String firstName=sc.next();
@@ -65,6 +98,9 @@ public class AddressArray {
                         break;
                 }
             }
+            else {
+                System.out.println("Enter valid first name!!!!");
+            }
         }
         System.out.println(obj);
     }
@@ -76,14 +112,10 @@ public class AddressArray {
                 obj.remove(book);
                 break;
             }
+            else {
+                System.out.println("Enter valid first name!!!!");
+            }
         }
         System.out.println(obj);
-    }
-    public static void main(String[] args) {
-        AddressArray arr=new AddressArray();
-        arr.addContact();
-        arr.addContact();
-        arr.editContact();
-        arr.deleteContact();
     }
 }
