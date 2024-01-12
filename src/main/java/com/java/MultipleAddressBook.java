@@ -9,8 +9,14 @@ public class MultipleAddressBook {
     public void add (){
         System.out.println("Enter Address book name:");
         String name=sc.next();
-        arr.add(new AddressArray(name));
-        System.out.println(arr);
+        boolean duplicate=arr.stream().anyMatch(a->a.name.equals(name));
+        if (duplicate){
+            System.out.println("Address book already exists!!");
+        }
+        else {
+            arr.add(new AddressArray(name));
+            System.out.println(arr);
+        }
     }
     public void edit(){
         System.out.println("Enter the address book Name: ");
