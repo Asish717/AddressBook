@@ -2,7 +2,7 @@ package com.java;
 
 public class Main {
     public static void main(String[] args) {
-        AddressArray arr=new AddressArray();
-        arr.method();
+        MultipleAddressBook a = new MultipleAddressBook();
+        a.display();
     }
 }

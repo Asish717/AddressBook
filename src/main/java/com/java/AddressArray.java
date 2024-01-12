@@ -4,11 +4,18 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AddressArray {
-    static Scanner sc=new Scanner(System.in);
+    String name;
     ArrayList<AddressBook>obj=new ArrayList<>();
+    public AddressArray(String name) {
+        this.name = name;
+    }
+    @Override
+    public String toString() {
+        return "AddressArray: "+"name= "+name+" obj= "+obj;
+    }
+    static Scanner sc=new Scanner(System.in);
     public void method(){
-        while (true){
-            System.out.println("1. Add contact\n2. Edit contact\n3. Delete contact\n4. View contact\n5. Exit");
+            System.out.println("1. Add contact\n2. Edit contact\n3. Delete contact\n4. View contact");
             System.out.println("Select operation: ");
             int choose= sc.nextInt();
             switch (choose){
@@ -24,15 +31,10 @@ public class AddressArray {
                 case 4:
                     viewContact();
                     break;
-                case 5:
-                    sc.close();
-                    System.exit(0);
-                    break;
                 default:
                     System.out.println("Enter valid operation!!");
                     break;
             }
-        }
     }
     public void viewContact(){
         for (int i=0;i<obj.size();i++){
@@ -58,7 +60,6 @@ public class AddressArray {
         String email=sc.next();
         AddressBook ab=new AddressBook(firstName,lastName,address,city,state,zip,phone,email);
         obj.add(ab);
-        System.out.println(ab);
     }
     public void editContact(){
         System.out.println("Enter the name for which the details to be edited: ");
@@ -97,9 +98,6 @@ public class AddressArray {
                         System.out.println("Select correct option!!!!");
                         break;
                 }
-            }
-            else {
-                System.out.println("Enter valid first name!!!!");
             }
         }
         System.out.println(obj);
